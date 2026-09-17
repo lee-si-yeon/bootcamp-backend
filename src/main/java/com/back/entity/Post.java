@@ -25,6 +25,7 @@ public class Post extends BaseIdAndTime {
 
     @Column(columnDefinition = "LONGTEXT")
     private String content;
+
     @OneToMany(mappedBy = "post", cascade = {PERSIST, REMOVE}, orphanRemoval = true)
     private List<PostComment> comments = new ArrayList<>();
 

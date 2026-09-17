@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 // 모든 엔티티들의 조상
 public abstract class BaseEntity {
+
     public abstract int getId();
 
     public abstract LocalDateTime getCreateDate();

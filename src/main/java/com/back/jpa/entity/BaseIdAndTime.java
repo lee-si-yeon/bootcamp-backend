@@ -17,11 +17,14 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 public abstract class BaseIdAndTime extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private int id;
+
     @CreatedDate
     private LocalDateTime createDate;
+
     @LastModifiedDate
     private LocalDateTime modifyDate;
 }

@@ -15,7 +15,7 @@ import static jakarta.persistence.CascadeType.REMOVE;
 @Entity
 @NoArgsConstructor
 @Getter
-@Table(name = "cash_wallet")
+@Table(name = "wallet")
 public class Wallet extends BaseManualIdAndTime {
 
     @ManyToOne(fetch = FetchType.LAZY)

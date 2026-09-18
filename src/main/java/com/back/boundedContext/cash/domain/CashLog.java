@@ -26,13 +26,19 @@ public class CashLog extends BaseIdAndTime {
 
     @Enumerated(EnumType.STRING)
     private EventType eventType;
+
     private String relTypeCode;
+
     private int relId;
+
     @ManyToOne(fetch = LAZY)
     private CashMember holder;
+
     @ManyToOne(fetch = LAZY)
     private Wallet wallet;
+
     private long amount;
+
     private long balance;
 
     public CashLog(EventType eventType, String relTypeCode, int relId, CashMember holder, Wallet wallet, long amount, long balance) {

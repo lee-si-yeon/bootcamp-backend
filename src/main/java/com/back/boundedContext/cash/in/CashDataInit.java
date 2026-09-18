@@ -18,10 +18,7 @@ public class CashDataInit {
     private final CashDataInit self;
     private final CashFacade cashFacade;
 
-    public CashDataInit(
-            @Lazy CashDataInit self,
-            CashFacade cashFacade
-    ) {
+    public CashDataInit(@Lazy CashDataInit self, CashFacade cashFacade) {
         this.self = self;
         this.cashFacade = cashFacade;
     }

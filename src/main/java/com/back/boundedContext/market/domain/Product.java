@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 import static jakarta.persistence.FetchType.LAZY;
 
 @Entity
-@Table(name = "product")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Table(name = "product")
 public class Product extends BaseIdAndTime {
 
     @ManyToOne(fetch = LAZY)

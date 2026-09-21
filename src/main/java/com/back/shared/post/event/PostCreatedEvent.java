@@ -4,8 +4,8 @@ import com.back.shared.post.dto.PostDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
 @AllArgsConstructor
+@Getter
 public class PostCreatedEvent {
 
     private final PostDto post;

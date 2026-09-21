@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Configuration
 @Slf4j
 public class CashDataInit {
+
     private final CashDataInit self;
     private final CashFacade cashFacade;
 

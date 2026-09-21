@@ -15,6 +15,7 @@ import static org.springframework.transaction.event.TransactionPhase.AFTER_COMMI
 @Component
 @RequiredArgsConstructor
 public class MemberEventListener {
+
     private final MemberFacade memberService;
 
     @TransactionalEventListener(phase = AFTER_COMMIT)

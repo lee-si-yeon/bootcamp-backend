@@ -4,8 +4,8 @@ import com.back.shared.market.dto.MarketMemberDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
 @AllArgsConstructor
+@Getter
 public class MarketMemberCreatedEvent {
 
     private final MarketMemberDto member;

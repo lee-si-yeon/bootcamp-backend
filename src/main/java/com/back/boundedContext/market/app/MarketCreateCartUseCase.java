@@ -23,10 +23,6 @@ public class MarketCreateCartUseCase {
 
         cartRepository.save(cart);
 
-        return new RsData<>(
-                "201-1",
-                "장바구니가 생성되었습니다.",
-                cart
-        );
+        return new RsData<>("201-1", "장바구니가 생성되었습니다.", cart);
     }
 }

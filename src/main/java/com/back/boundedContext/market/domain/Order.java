@@ -18,7 +18,7 @@ import static jakarta.persistence.FetchType.LAZY;
 @Entity
 @NoArgsConstructor
 @Getter
-@Table(name = "order")
+@Table(name = "market_order")
 public class Order extends BaseIdAndTime {
 
     @ManyToOne(fetch = LAZY)

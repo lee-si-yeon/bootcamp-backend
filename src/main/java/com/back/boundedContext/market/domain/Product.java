@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import static jakarta.persistence.FetchType.LAZY;
 
 @Entity
-@Table(name = "MARKET_PRODUCT")
+@Table(name = "product")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

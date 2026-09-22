@@ -21,14 +21,14 @@ public class CashCompleteOrderPaymentUseCase {
         Wallet holdingWallet = cashSupport.findHoldingWallet().get();
 
         if (pgPaymentAmount > 0) {
-            customerWallet.credit(pgPaymentAmount, CashLog.EventType.충전__PG결제_토스페이먼츠, "Order", order.getId());
+            customerWallet.credit(pgPaymentAmount, CashLog.EventType.충전__PG결제_토스페이먼츠, order.getModelTypeCode(), order.getId());
         }
 
         boolean canPay = customerWallet.getBalance() >= order.getSalePrice();
 
         if (canPay) {
-            customerWallet.debit(order.getSalePrice(), CashLog.EventType.사용__주문결제, "Order", order.getId());
-            holdingWallet.credit(order.getSalePrice(), CashLog.EventType.임시보관__주문결제, "Order", order.getId());
+            customerWallet.debit(order.getSalePrice(), CashLog.EventType.사용__주문결제, order.getModelTypeCode(), order.getId());
+            holdingWallet.credit(order.getSalePrice(), CashLog.EventType.임시보관__주문결제, order.getModelTypeCode(), order.getId());
             eventPublisher.publish(new CashOrderPaymentSucceededEvent(order, pgPaymentAmount));
         } else {
             eventPublisher.publish(new CashOrderPaymentFailedEvent(

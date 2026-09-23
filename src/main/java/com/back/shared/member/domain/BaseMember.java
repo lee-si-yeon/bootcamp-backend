@@ -30,4 +30,8 @@ public abstract class BaseMember extends BaseEntity {
         this.nickname = nickname;
         this.activityScore = activityScore;
     }
+
+    public boolean isSystem() {
+        return "system".equals(username);
+    }
 }

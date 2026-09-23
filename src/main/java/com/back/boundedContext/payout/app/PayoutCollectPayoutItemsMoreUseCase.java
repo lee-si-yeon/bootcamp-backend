@@ -50,6 +50,10 @@ public class PayoutCollectPayoutItemsMoreUseCase {
         return new RsData<>("201-1", "%d건의 정산데이터가 생성되었습니다.".formatted(payoutReadyCandidateItems.size()), payoutReadyCandidateItems.size());
     }
 
+    private Optional<Payout> findActiveByPayee(PayoutMember payee) {
+        return payoutRepository.findByPayeeAndPayoutDateIsNull(payee);
+    }
+
     private List<PayoutCandidateItem> findPayoutReadyCandidateItems(int limit) {
         LocalDateTime daysAgo = LocalDateTime
                 .now()
@@ -58,9 +62,5 @@ public class PayoutCollectPayoutItemsMoreUseCase {
                 .atStartOfDay();
 
         return payoutCandidateItemRepository.findByPayoutItemIsNullAndPaymentDateBeforeOrderByPayeeAscIdAsc(daysAgo, PageRequest.of(0, limit));
-    }
-
-    private Optional<Payout> findActiveByPayee(PayoutMember payee) {
-        return payoutRepository.findByPayeeAndPayoutDateIsNull(payee);
     }
 }
